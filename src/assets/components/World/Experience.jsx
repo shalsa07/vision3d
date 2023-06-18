@@ -3,11 +3,15 @@ import { Canvas } from "@react-three/fiber";
 import { Environment, Html, OrbitControls } from "@react-three/drei";
 import { enviHdriMap, gltffiles } from "../../gltfLinks";
 import Propgress from "./Propgress";
-import ObjModels from "./ObjModels";
 import { Perf } from "r3f-perf";
 import PlaceHolder from "./PlaceHolder";
 import { useSnapshot } from "valtio";
 import { state } from "../../stateManagement/store";
+
+// import ObjModels from "./ObjModels";
+const ObjModels=React.lazy(()=>{
+  return import("./ObjModels")
+})
 
 const Experience = () => {
   const snap=useSnapshot(state)
@@ -30,7 +34,7 @@ const Experience = () => {
           // target={[snap.camTarget[0],snap.camTarget[1],snap.camTarget[2]]}
         />
 
-        <ObjModels/>
+        <Suspense><ObjModels/></Suspense>
 
       </Suspense>
     </Canvas>

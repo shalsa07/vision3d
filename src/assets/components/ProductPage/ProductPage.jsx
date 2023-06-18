@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import './ProductPage.scss'
-import World from '../World/World'
+// import World from '../World/World'
+const World = React.lazy(()=>{
+  return import('../World/World')
+})
 
 const ProductPage = () => {
   return (
     <div className='ProductPage'>
         <div className='worldContainer'>
-          <World/>
+          <Suspense>
+            <World/>
+          </Suspense>
         </div>
     </div>
   )

@@ -1,5 +1,5 @@
 .uiRoomMenu{
-    width: calc(100% - 100px);
+    width: fit-content;
     height: 40px;
     display: flex;
     justify-content: flex-start;
@@ -11,5 +11,9 @@
     margin: 0 auto;
     border-radius: 25px;
     z-index: 10;
-    overflow-x: auto;
+
+    @media screen and (max-width:420px) {
+        width: calc(100% - 100px);
+        overflow-x: auto;
+    }
 }

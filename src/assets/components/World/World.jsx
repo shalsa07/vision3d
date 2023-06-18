@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import './World.scss'
-import Experience from './Experience'
-import Wolrd360 from './Wolrd360'
+
+// import Experience from './Experience'
+
+const Experience=React.lazy(()=>{
+  return import('./Experience')
+})
+
+// import Ar from './Ar'
+
+const Ar=React.lazy(()=>{
+  return import('./Ar')
+})
+
 import UiWorldMenu from '../worldUi/UiWorldMenu/UiWorldMenu'
 
 //closeBtn
@@ -38,7 +49,6 @@ import UiCLoseBtn from '../worldUi/uiCloseBtn/UiCLoseBtn'
 import ArBtn from '../worldUi/uiArBtn/ArBtn'
 import FullScreenBtn from '../worldUi/uiFullScrn/FullScreenBtn'
 import UiLevelToggle from '../worldUi/uiLevelsToggle/UiLevelToggle'
-import Ar from './Ar'
 import { useSnapshot } from 'valtio'
 import { state } from '../../stateManagement/store'
 
@@ -67,6 +77,7 @@ const World = () => {
       // console.log('rooms')
     }},
     {icon:<VrpanoOutlinedIcon className='icons'/>,title:'rooms',clickFunction:()=>{
+      state.arBtnOffset='50px'
       state.uiRooms=true
       state.uiSettingsMenu=false
       // console.log('rooms')
@@ -102,7 +113,7 @@ const World = () => {
       {icon:<EmojiTransportationOutlinedIcon className='icons'/>,title:'driveway',clickFunction:()=>{
         state.minDist=0
         state.maxDist=1
-        state.roomCord=[-15,-1.6,-13]
+        snap.arMode ? state.roomCord=[-15,0,-13] : state.roomCord=[-15,-1.6,-13]
         state.roomRotation=0
         state.camTarget=[-15,-1.6,-12]
         state.camPosition=[0,0,0]
@@ -111,7 +122,7 @@ const World = () => {
       {icon:<PoolOutlinedIcon className='icons'/>,title:'pool',clickFunction:()=>{
         state.minDist=0
         state.maxDist=.1
-        state.roomCord=[2,0,-22]
+        snap.arMode ? state.roomCord=[2,0,-22] :  state.roomCord=[2,-1.6,-22]
         state.roomRotation=180
         // state.camTarget=[0,0,0]
         state.camPosition=[0,0,0]
@@ -123,7 +134,7 @@ const World = () => {
       {icon:<MeetingRoomIcon className='icons'/>,title:'foyer',clickFunction:()=>{
         state.minDist=0
         state.maxDist=.1
-        state.roomCord=[-15.5,-1.6,-2.5]
+        snap.arMode ? state.roomCord=[-15.5,0,-2.5] : state.roomCord=[-15.5,-1.6,-2.5]
         state.roomRotation=0
         // state.camTarget=[-15.5,-1.6,-1]
         state.camPosition=[0,0,0]
@@ -132,7 +143,7 @@ const World = () => {
       {icon:<StairsOutlinedIcon className='icons'/>,title:'stair',clickFunction:()=>{
         state.minDist=0
         state.maxDist=.1
-        state.roomCord=[14,-1.6,-11]
+        snap.arMode ? state.roomCord=[14,0,-11] : state.roomCord=[14,-1.6,-11]
         state.roomRotation=180
         // state.camTarget=[15,-1.6,-10]
         state.camPosition=[0,0,0]
@@ -141,7 +152,7 @@ const World = () => {
       {icon:<CountertopsOutlinedIcon className='icons'/>,title:'kitchen',clickFunction:()=>{
         state.minDist=0
         state.maxDist=.1
-        state.roomCord=[-11.5,-1,6.5]
+        snap.arMode ? state.roomCord=[-11.5,0,6.5] : state.roomCord=[-11.5,-1,6.5]
         state.roomRotation=0
         // state.camTarget=[-11.5,-1,7.5]
         state.camPosition=[0,0,0]
@@ -150,7 +161,7 @@ const World = () => {
       {icon:<WeekendOutlinedIcon className='icons'/>,title:'lounge',clickFunction:()=>{
         state.minDist=0
         state.maxDist=.1
-        state.roomCord=[15,-.8,-20]
+        snap.arMode ? state.roomCord=[15,0,-20] : state.roomCord=[15,-.8,-20]
         state.roomRotation=180
         // state.camTarget=[15,-.8,-19]
         state.camPosition=[0,0,0]
@@ -159,7 +170,7 @@ const World = () => {
       {icon:<BedOutlinedIcon className='icons'/>,title:'bedroom',clickFunction:()=>{
         state.minDist=0
         state.maxDist=.1
-        state.roomCord=[-9,-4.2,0]
+        snap.arMode ? state.roomCord=[-9,-1.2,0] : state.roomCord=[-9,-4.2,0]
         state.roomRotation=0
         // state.camTarget=[-10,-4.2,1]
         state.camPosition=[0,0,0]
@@ -168,7 +179,7 @@ const World = () => {
       {icon:<DeckOutlinedIcon className='icons'/>,title:'balcony',clickFunction:()=>{
         state.minDist=0
         state.maxDist=.1
-        state.roomCord=[13,-4.2,-11]
+        snap.arMode ? state.roomCord=[13,-1.2,-11] : state.roomCord=[13,-4.2,-11]
         state.roomRotation=180
         // state.camTarget=[13,-4.2,-10]
         state.camPosition=[0,0,0]
@@ -208,6 +219,8 @@ const World = () => {
     state.minDist=20,
     state.maxDist=60
 
+    state.arBtnOffset='20px'
+
     // console.log('close')
   },
   doubleclickFunction:()=>{
@@ -223,7 +236,9 @@ const World = () => {
         <UiCLoseBtn closeBtn={uiBack}/>
         <ArBtn arBtnItems={arBtn}/>
         <FullScreenBtn fullScrnItems={fullScrnBtn}/>
-        {snap.arMode ? <Ar/> : <Experience/>}
+        
+        {snap.arMode ? <Suspense><Ar/></Suspense> : <Suspense><Experience/></Suspense>}
+        {/*snap.arMode ? <Ar/> : <Experience/>*/}  
     </>
   )
 }

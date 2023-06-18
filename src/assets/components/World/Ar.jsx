@@ -4,10 +4,14 @@ import World from './World'
 import { Canvas } from '@react-three/fiber'
 import Experience from './Experience'
 import { Environment } from '@react-three/drei'
-import ObjModels from './ObjModels'
 import { enviHdriMap } from '../../gltfLinks'
 import { useSnapshot } from 'valtio'
 import { state } from '../../stateManagement/store'
+
+// import ObjModels from './ObjModels'
+const ObjModels=React.lazy(()=>{
+  return import('./ObjModels')
+})
 
 const Ar = () => {
   const snap=useSnapshot(state)
@@ -18,7 +22,7 @@ const Ar = () => {
             color: snap.arMode ? 'red' : 'rgb(37, 37, 37)',
             position:'absolute',
             left:'0',right:'0',
-            bottom:'20px',
+            bottom:snap.arBtnOffset,
             margin: '0 auto',
             width:'60px',
             height:'40px',
@@ -33,7 +37,7 @@ const Ar = () => {
 
                 <Environment files={enviHdriMap}/>
 
-                <ObjModels/>
+                <Suspense><ObjModels/></Suspense>
             </XR>
             </Suspense>
         </Canvas>

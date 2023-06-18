@@ -7,7 +7,6 @@ import { useSnapshot } from 'valtio';
 import { state } from '../../stateManagement/store';
 import { degToRad } from 'three/src/math/MathUtils';
 import { useControls } from 'leva';
-// import { rotate } from 'maath/dist/declarations/src/buffer';
 
 const ObjModels = () => {
 
