@@ -48,11 +48,7 @@ const logging=()=>{
 }
 
 const World = () => {
-  // const {progress}=useProgress()
-  // const {fullScrnState,setFullScrnState,setLevelRoofState,setLevel1stState,setCamTarget}=useContext(AppContext)
-  // const [state,dispatch]=useReducer(postReducer,INITIAL_VALUES)
   const snap=useSnapshot(state)
-  // console.log(snap);
 
   const uiArrows={
     left:{icon:<ArrowBackOutlinedIcon className='icons'/>,clickFunction:()=>console.log('')},

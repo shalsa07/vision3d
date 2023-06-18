@@ -1,7 +1,6 @@
 import React from 'react'
 import './ProductPage.scss'
 import World from '../World/World'
-import Ar from '../World/Ar'
 
 const ProductPage = () => {
   return (

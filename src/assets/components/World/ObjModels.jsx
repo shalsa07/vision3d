@@ -22,7 +22,6 @@ const ObjModels = () => {
 
     const {camera}=useThree()
     camera.lookAt(a,b,c)
-    // camera.lookAt.set(a,b,c)
 
     let objNodels
 
@@ -50,10 +49,6 @@ const ObjModels = () => {
 
             // color section
             child.name === "simple_Plaster_2003" && (child.material.color=new Color('#49392d'))
-            // child.material.name === "bake_opt1_plastered_2" && (console.log(child))
-
-            // console.log(child.material)
-
         })
 
         // console.log(objNames)
@@ -65,6 +60,7 @@ const ObjModels = () => {
     <group ref={refWorld}
         // position={[positioning.position.x,positioning.position.y,positioning.position.z]}
         // rotation={[0,degToRad(positioning.rotate),0]}
+        
         position={[x,y,z]}
         rotation={[0,degToRad(snap.roomRotation),0]}
     >
