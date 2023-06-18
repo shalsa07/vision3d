@@ -1,0 +1,16 @@
+.uiWorldMenu{
+    width: 40px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.684);
+    position: absolute;
+    top: 0;bottom: 0;
+    right: 0;
+    margin: auto 0;
+    border-radius: 20px;
+    z-index: 10;
+    // gap: 10px;
+}

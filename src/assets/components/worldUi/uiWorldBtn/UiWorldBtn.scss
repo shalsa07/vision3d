@@ -1,0 +1,51 @@
+.uiWorldBtn{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    // color: inherit;
+    z-index: 200;
+
+    .uiWorldBtn_Btn_icon_container{
+        width: calc(100% - .75rem);
+        height: calc(100% - .75rem);
+        margin: 0;
+        padding: 0;
+        background-color: rgba(128, 128, 128, 0.356);
+        border-radius: 50%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        // z-index: 50;
+
+        &:hover{
+            border-radius: .5rem;
+            scale: 1.05;
+        }
+    }
+
+    .uiWorldBtn_Btn_text{
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: .5rem;
+        display: none;
+        text-transform: uppercase;
+        // z-index: 30;
+
+        &:hover{
+            display: inline;
+            bottom: -.35rem;
+        }
+    }
+}
