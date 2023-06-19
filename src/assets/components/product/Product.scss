@@ -1,0 +1,90 @@
+.product{
+    // width: 900px;
+    width: inherit;
+    // height: fit-content;
+    // background-color: blue;
+    position: relative;
+    left: 0;
+    top: 80px;
+    right: 0;
+    margin: 0 auto;
+
+    .product_wrap{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        justify-items: center;
+
+        .product_titleSection{
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            padding-top: 20px;
+            position: relative;
+    
+            .product_shareSection{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: end;  
+
+                .product_shareSection_wrap{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100px;
+                    height: 30px;
+                    gap: 10px;
+                    // background-color: blueviolet;
+                }
+            }
+        }
+
+        .product_interactiveSection{
+            width: 100%;
+            height: 420px;
+            position: relative;
+            border-radius: 1rem;
+            // background-color: red;
+            display: flex;
+            margin: 20px 0;
+            justify-content: center;
+            align-items: center;
+            transition: all .25s ease;
+            overflow: hidden;
+            color: rgb(222, 222, 222);
+
+            &:hover{
+                -webkit-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.5);
+                -moz-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.5);
+                box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.5);
+            }
+        }
+
+        .product_descSection{
+            width: 100%;
+            height: fit-content;
+            position: relative;
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+
+            @media screen and (max-width:420px) {
+                flex-direction: column-reverse;
+            }
+
+            .product_descSection_writeup{
+                flex: 2;
+            }
+
+            .product_descSection_float{
+                flex: 1.5;
+                background-color: blanchedalmond;
+            }
+        }
+    }
+}

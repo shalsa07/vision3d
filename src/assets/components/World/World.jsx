@@ -90,11 +90,11 @@ const World = () => {
   ]
   
   const uiLevelsMenu=[
-    {icon:<RoofingIcon className='icons'/>,title:'rooFlr',clickFunction:()=>{
+    {icon:<Filter1Icon className='icons'/>,title:'rooFlr',clickFunction:()=>{
       state.toggle1stFlr=false
       // console.log('1st')
     }},
-    {icon:<Filter1Icon className='icons'/>,title:'1stFlr',clickFunction:()=>{
+    {icon:<RoofingIcon className='icons'/>,title:'1stFlr',clickFunction:()=>{
       state.toggleRoofFlr=false
       // console.log('roof')
     }},

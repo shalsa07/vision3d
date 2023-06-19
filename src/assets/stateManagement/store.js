@@ -15,12 +15,12 @@ const state=proxy({
 
     roomCord:[-14,-2,6],
     roomRotation:0,
-    camPos:[0,0,0],
+    camPos:[20,20,30],
     camTarget:[0,0,0],
 
     camPosition:[-20,20,30],
 
-    minDist:20,
+    minDist:30,
     maxDist:60,
 
     arBtnOffset:'20px'

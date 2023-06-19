@@ -32,7 +32,9 @@ const Ar = () => {
         />
         <Canvas>
             <Suspense>
-            <XR>
+            <XR
+              
+            >
                 <ambientLight intensity={1}/>
 
                 <Environment files={enviHdriMap}/>

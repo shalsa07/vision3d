@@ -28,6 +28,7 @@ const Experience = () => {
         <Environment files={enviHdriMap}/>
 
         <OrbitControls 
+          enablePan={false}
           minDistance={snap.minDist}
           maxDistance={snap.maxDist}
           // target={[a,b,c]}
