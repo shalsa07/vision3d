@@ -1,6 +1,6 @@
 .uiWorldBtn{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,8 +14,8 @@
         width: calc(100% - .75rem);
         height: calc(100% - .75rem);
         margin: 0;
-        padding: 0;
-        background-color: rgba(128, 128, 128, 0.356);
+        padding: 3px;
+        background-color: rgba(162, 162, 162, 0.593);
         border-radius: 50%;
         position: absolute;
         display: flex;

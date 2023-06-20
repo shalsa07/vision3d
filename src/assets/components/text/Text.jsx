@@ -1,10 +1,15 @@
 import React from 'react'
 import './Text.scss'
+import { fontSize } from '@mui/system'
 
 const Text = ({item}) => {
     // console.log(item);
   return (
-    <h1 className='text'>{item.title}</h1>
+    <p style={{
+      fontSize:`${item?.fontSize}`,
+      fontWeight:`${item?.fontWeight}`,
+      paddingLeft:`${item?.paddingLeft}`
+    }} className='text'>{item.title}</p>
   )
 }
 

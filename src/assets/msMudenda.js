@@ -83,6 +83,107 @@ const msmudenda={
         kitchen:[-11,-.6,6.5,0,-11,-.6,7.5],
         bedroom:[-8,-4.6,0,-9,-4.6,1],
         balcony:[13,-4.6,-11,180,13,-4.6,-9],
+    },
+
+    productText:{
+        projectTite:{
+            title:`Four Bedroom house`
+        },
+    
+        typeOfDesign:{
+            title:`Residential design`
+        },
+    
+        typeOfHouse:{
+            title:`4 bedroomhouse design`
+        },
+    
+        desc:{
+            title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
+        },
+    
+        parapgraph:{
+            title:'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
+        },
+    
+        specialFeatur:{
+            title:`bedrooms, breakfast - nook, maid’s room, walk-in pantry, formal dining, game/rec room, library/study, outdoor fireplace
+        `},
+    
+        houseSpaces:[
+            {
+                title:`plan dimensions:`,
+                specs:{
+                    title:`
+                        width:
+                        height:`
+                }
+            },
+            {
+                title:`Ceiling heights:`,
+                specs:{
+                    title:`
+                        2.7meters`
+                }
+            },
+            {
+                title:`Square Footage Breakdown:`,
+                specs:{
+                    title:`
+                        plinth area:
+                        porch area:`
+                }
+            },
+            {
+                title:`Bedrooms:`,
+                specs:{
+                    title:`
+                        1 Master bedroom: 
+                            Walking closet:
+                            sleeping area:
+                        2 Bathrooms:`
+                    }
+            },
+            {
+                title:`Kitchen:`,
+                specs:{
+                    title:`
+                        Kitchen area:
+                        island:
+                        walk-in-pantry:`
+                    }
+            },
+            {
+                title:`additional rooms:`,
+                specs:{
+                    title:`
+                        helper's room:
+                        greet room`
+                    }
+            },
+            {
+                title:`Grarge:`,
+                specs:{
+                    title:`
+                        2 car parking`
+                    }
+            },
+            {
+                title:`outdoor areas:`,
+                specs:{
+                    title:`
+                        porch`
+                    }
+            },
+            {
+                title:`roof:  `,
+                specs:{
+                    title:`
+                        finsh:
+                        pitch:`
+                    }
+            },
+        ]
     }
 }
 

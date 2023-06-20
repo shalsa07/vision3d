@@ -3,7 +3,9 @@ import './NavBar.scss'
 import LogoText from '../logoText/LogoText'
 import UserSettings from '../userSettings/UserSettings'
 import Title from '../title/Title'
+import { msmudenda } from '../../msMudenda'
 
+const productText=msmudenda.productText
 
 const navBarText={
     logoText:{text:'luyaridesigns'},
@@ -21,7 +23,7 @@ const NavBar = () => {
             <LogoText item={navBarText.logoText}/>
             <div className='navBar_userSettings'>
                 <div className='navBar_userSettings_title'>
-                    <Title item={navBarText.productDetails}/>
+                    <Title item={productText.typeOfDesign}/>
                 </div>
                 <UserSettings/>
             </div>

@@ -4,7 +4,7 @@ import './Title.scss'
 const Title = ({item}) => {
     // console.log(item);
   return (
-    <h1 className='title'>{item.title}</h1>
+    <h1 style={{fontSize:`${item?.fontSize}`}}  className='title'>{item.title}</h1>
   )
 }
 

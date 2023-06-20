@@ -1,19 +1,19 @@
 .ProductPage{
     width: 100%;
-    // height: fit-content;
-    // background-color: red;
-    // background-color: #ededed;  
+    height: auto;  
     display: flex;
     flex-direction: column;
     position: relative;
     color: rgb(56, 56, 56);
-    // background-color: rgb(226, 226, 226);
+    background-color: white;
     position: relative;
+    overflow: hidden;
 
     .worldContainer{
         position: relative;
-        width: calc(860px - 20px);
-        height: calc(100vh - 20px);
+        width: calc(1024px - 20px);
+        height: auto;
+        // height: fit-content;
         margin: auto;
 
         @media screen and (max-width:420px) {
@@ -24,13 +24,9 @@
             position: relative;
             top: 80px;
             width: 100%;
-            height: calc(100% - 80px);
+            height: calc(100% - 60px);
             left: 0;right: 0;
             margin:0 auto;
-    
-            // @media screen and (max-width:420px) {
-            //     width:345px
-            // }
         }
     }
 
